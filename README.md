@@ -1,5 +1,5 @@
 # samtools-sort-
-samtools sort code
+### samtools sort code
 -n 代表按照queryname 排序与picard sortsam 的so=queryname 相同
 [问题](https://www.biostars.org/p/102735/)
 ~~~
