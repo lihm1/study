@@ -15,3 +15,13 @@ source activate wes
 
 samtools sort -n -o /public/home/liuxs/ncbi/dbGaP-21926/signature/bam/SRR5876745.sort -O bam /public/home/liuxs/ncbi/dbGaP-21926/dnaseq/bam/SRR5876745.bam 
 ~~~
+##染色体顺序重排
+~~~
+for i in $(seq 1 22) X Y M; do cat chr${i}.fa >> hg38.fasta; done
+
+samtools faidx hg38.fa chr2>chr2.fa
+
+for i in $(cat sample);do samtools faidx hg38.fa $i >> /home/lihm/rnaseq/hh/$i.fa;done
+
+cat `ls  *.fa | sort -V | grep -i -v chrM ` chrM.fa > b32.fa
+~~~
